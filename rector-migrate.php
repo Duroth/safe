@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Rector\Renaming\Rector\FuncCall\RenameFunctionRector;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-# This file configures rector/rector:~0.7.0 to replace all PHP functions with their equivalent "safe" functions
+# This file configures rector/rector to replace all PHP functions with their equivalent "safe" functions
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
 
@@ -30,7 +30,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'array_replace_recursive' => 'Safe\array_replace_recursive',
             'array_walk_recursive' => 'Safe\array_walk_recursive',
             'arsort' => 'Safe\arsort',
-            'asort' => 'Safe\asort',
             'base64_decode' => 'Safe\base64_decode',
             'bindtextdomain' => 'Safe\bindtextdomain',
             'bzclose' => 'Safe\bzclose',
@@ -43,9 +42,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'chown' => 'Safe\chown',
             'chroot' => 'Safe\chroot',
             'class_alias' => 'Safe\class_alias',
-            'class_implements' => 'Safe\class_implements',
-            'class_parents' => 'Safe\class_parents',
-            'class_uses' => 'Safe\class_uses',
             'cli_set_process_title' => 'Safe\cli_set_process_title',
             'closelog' => 'Safe\closelog',
             'com_create_guid' => 'Safe\com_create_guid',
@@ -253,7 +249,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'getprotobynumber' => 'Safe\getprotobynumber',
             'getrusage' => 'Safe\getrusage',
             'getservbyport' => 'Safe\getservbyport',
-            'get_headers' => 'Safe\get_headers',
             'get_include_path' => 'Safe\get_include_path',
             'get_meta_tags' => 'Safe\get_meta_tags',
             'glob' => 'Safe\glob',
@@ -372,7 +367,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'imagegd2' => 'Safe\imagegd2',
             'imagegif' => 'Safe\imagegif',
             'imagegrabscreen' => 'Safe\imagegrabscreen',
-            'imagegrabwindow' => 'Safe\imagegrabwindow',
             'imagejpeg' => 'Safe\imagejpeg',
             'imagelayereffect' => 'Safe\imagelayereffect',
             'imageline' => 'Safe\imageline',
@@ -465,7 +459,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'json_decode' => 'Safe\json_decode',
             'json_encode' => 'Safe\json_encode',
             'krsort' => 'Safe\krsort',
-            'ksort' => 'Safe\ksort',
             'lchgrp' => 'Safe\lchgrp',
             'lchown' => 'Safe\lchown',
             'ldap_8859_to_t61' => 'Safe\ldap_8859_to_t61',
@@ -585,7 +578,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'mysql_tablename' => 'Safe\mysql_tablename',
             'mysql_thread_id' => 'Safe\mysql_thread_id',
             'mysql_unbuffered_query' => 'Safe\mysql_unbuffered_query',
-            'natcasesort' => 'Safe\natcasesort',
             'natsort' => 'Safe\natsort',
             'ob_clean' => 'Safe\ob_clean',
             'ob_end_clean' => 'Safe\ob_end_clean',
@@ -720,12 +712,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'parse_ini_string' => 'Safe\parse_ini_string',
             'parse_url' => 'Safe\parse_url',
             'password_hash' => 'Safe\password_hash',
-            'pcntl_exec' => 'Safe\pcntl_exec',
             'pcntl_getpriority' => 'Safe\pcntl_getpriority',
             'pcntl_setpriority' => 'Safe\pcntl_setpriority',
             'pcntl_signal_dispatch' => 'Safe\pcntl_signal_dispatch',
             'pcntl_sigprocmask' => 'Safe\pcntl_sigprocmask',
-            'pcntl_strerror' => 'Safe\pcntl_strerror',
+            'pcntl_sigtimedwait' => 'Safe\pcntl_sigtimedwait',
+            'pcntl_sigwaitinfo' => 'Safe\pcntl_sigwaitinfo',
             'pfsockopen' => 'Safe\pfsockopen',
             'pg_cancel_query' => 'Safe\pg_cancel_query',
             'pg_client_encoding' => 'Safe\pg_client_encoding',
@@ -806,11 +798,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'posix_setuid' => 'Safe\posix_setuid',
             'posix_times' => 'Safe\posix_times',
             'posix_uname' => 'Safe\posix_uname',
+            'preg_grep' => 'Safe\preg_grep',
             'preg_match' => 'Safe\preg_match',
             'preg_match_all' => 'Safe\preg_match_all',
             'preg_replace' => 'Safe\preg_replace',
             'preg_split' => 'Safe\preg_split',
-            'proc_get_status' => 'Safe\proc_get_status',
             'proc_nice' => 'Safe\proc_nice',
             'pspell_add_to_personal' => 'Safe\pspell_add_to_personal',
             'pspell_add_to_session' => 'Safe\pspell_add_to_session',

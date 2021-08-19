@@ -1780,10 +1780,13 @@ function curl_multi_init()
  * a "304 Not Modified" header will be returned
  * assuming CURLOPT_HEADER is TRUE.
  * Use CURL_TIMECOND_IFUNMODSINCE for the reverse
- * effect. CURL_TIMECOND_IFMODSINCE is the
- * default.
+ * effect. Use CURL_TIMECOND_NONE to ignore
+ * CURLOPT_TIMEVALUE and always return the page.
+ * CURL_TIMECOND_NONE is the default.
  *
  *
+ * Before cURL 7.46.0 the default was
+ * CURL_TIMECOND_IFMODSINCE.
  *
  *
  *
@@ -1812,8 +1815,7 @@ function curl_multi_init()
  * CURLOPT_TIMEVALUE
  *
  * The time in seconds since January 1st, 1970. The time will be used
- * by CURLOPT_TIMECONDITION. By default,
- * CURL_TIMECOND_IFMODSINCE is used.
+ * by CURLOPT_TIMECONDITION.
  *
  *
  *
